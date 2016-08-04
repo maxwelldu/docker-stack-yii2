@@ -4,7 +4,10 @@
 # FROM daocloud.io/wshudong/php-fpm:latest
 #FROM daocloud.io/wshudong/php-fpm:latest
 FROM starkwang/nginx-php7-v8js
-RUN apt-get install -y mbstring
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y --force-yes supervisor \
+ 	mbstring
 WORKDIR /var/www/html
 # Composer packages are installed first. This will only add packages
 # that are not already in the yii2-base image.
