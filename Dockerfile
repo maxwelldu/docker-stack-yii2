@@ -7,7 +7,7 @@ FROM starkwang/nginx-php7-v8js
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y --force-yes supervisor \
- 	mbstring
+ 	php7.0-mbstring
 WORKDIR /var/www/html
 # Composer packages are installed first. This will only add packages
 # that are not already in the yii2-base image.
